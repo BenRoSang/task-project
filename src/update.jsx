@@ -141,7 +141,7 @@ function Update() {
                                     ))
                                 }
                             </select>
-                            <span className="block text-xs text-gray-500">Tip: To select multiple press &#8220;Ctrl&#8220;.</span>
+                            <span className="block text-xs mt-1 text-gray-500">Tip: To select multiple hold &#8220;Ctrl&#8220;.</span>
                             <span className="block text-sm text-pink-500 mt-1">{errors.sectors && errors.sectors.message}</span>
                         </div>
                         <div className="mb-6">
