@@ -39,14 +39,11 @@ function Update() {
 
 
     const FormSubmitHandler = async(data) => {
-        console.log('add')
         try {
             const response = await AddUser(data);
             if(response.status == 1) {
-                console.log('successful')
                 navigate('/')
             }else{
-                console.log('error')
                 setShowModal(true)
                 setErrorMsg(response.message)
             }
@@ -58,12 +55,10 @@ function Update() {
     const SubmitUpdateHandler = async(data) => {
         try {
             const response = await UpdateUser({id: objValue[0], userId: objValue[1].id, userName: data.userName, sectors: data.sectors, isAgree: data.isAgree})
-            console.log(response)
+
             if(response.status == 1) {
-                console.log('successful')
                 navigate('/')
             }else{
-                console.log('error')
                 setShowModal(true)
                 setErrorMsg(response.message)
             }
@@ -115,6 +110,7 @@ function Update() {
             <>
                 <div className="w-full md:w-6/12">
                     <form onSubmit={handleSubmit(user ? SubmitUpdateHandler : FormSubmitHandler)} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        <h1 className="text-gray-700 text-[14px] mb-5 font-bold">Please enter your name and pick the Sectors you are currently involved in.</h1>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-[14px] font-bold mb-2" htmlFor="username">
                                 Username

@@ -17,7 +17,6 @@ export const UserContextProvider = ({children}) => {
     const [updateUser, setUpdateUser] = useState({});
 
     const UpdateUser = async({id, userId, userName, sectors, isAgree}) => {
-        console.log(id, userId, userName)
         const updatedUser = {id: userId, userName: userName, sectors: sectors, isAgree: isAgree}
         const userRef = ref(db, 'users');
         // let response;
@@ -28,7 +27,6 @@ export const UserContextProvider = ({children}) => {
             if(user) {
                 return { status: 0, message: 'User already exist'}
             }else{
-                console.log(updatedUser)
                 set(ref(db, `users/${id}`), updatedUser);
                 GetUsers();
                 return { status: 1, message: 'Update Successful'}

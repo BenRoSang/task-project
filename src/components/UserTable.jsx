@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function UserTable() {
     const {sectors, DeleteUser, users, setIsLoading} = useContext(UserContext);
-    console.log(users)
+
     const flattenOptions = (sectors, idArray) => {
         const flatOptions = [];
         function flatten(data, idArray) {
